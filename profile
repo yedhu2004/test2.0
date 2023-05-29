@@ -31,3 +31,57 @@ Yedhukrishna K R
 - GOOGLE COLAB
 - HACKERSRANK
 - w3 school
+
+## python code examples
+
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+iris=load_iris()
+x = iris.data
+y = iris.target
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+ml=SVC()
+ml.fit(x_train,y_train)
+result=ml.predict(x_test)
+print(result)
+score=accuracy_score(result,y_test)
+print(score)
+
+
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+iris=load_iris()
+x = iris.data
+y = iris.target
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+ml=SVC()
+ml.fit(x_train,y_train)
+result=ml.predict(x_test)
+print("test input\n")
+print(x_test)
+print("test output\n")
+print(y_test)
+print("predicted result\n")
+print(result)
+score=accuracy_score(result,y_test)
+print(score)
+
+
+import numpy as np
+import pandas as pd
+from sklearn.svm import SVC
+from sklearn.datasets import load_iris
+iris=pd.read_csv("/iris.csv")
+x=iris[['sepal.length','sepal.width','petal.length','petal.width']]
+y=iris['variety']
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+ml=SVC()
+ml.fit(x,y)
+result=ml.predict([[5.1,3.5,1.4,0.2]])
+print(result)
